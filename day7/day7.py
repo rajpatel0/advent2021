@@ -1,3 +1,4 @@
+import statistics
 import math
 with open('input.txt','r') as f:
     data = f.readlines()
@@ -19,4 +20,6 @@ for val in range(min(dataInt),max(dataInt)):
 print(minCost)
 
 
-
+#simplier solution to part 2
+valToSub = math.floor(statistics.fmean(dataInt))
+print(sum([(abs(val-valToSub)*(abs(val-valToSub)+1))/2 for val in dataInt]))
