@@ -44,11 +44,12 @@ maxX = max([val[0] for val in dotCoords])
 maxY = max([val[1] for val in dotCoords])
 
 print(maxX)
-mat = [['.' for _ in range(maxY+1)] for _ in range(maxX+1)]
+mat = [[" " for _ in range(maxY+1)] for _ in range(maxX+1)]
 for x,y in dotCoords:
     mat[x][y] = '#'
 
-print(np.array(mat))
+np.set_printoptions(edgeitems=30,linewidth=1000)
+print(np.transpose(np.array(mat)))
 
     
  
