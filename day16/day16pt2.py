@@ -31,7 +31,6 @@ def getHeader(binData,curIndex):
  
 
 def operatorPacket(binData,curIndex,op,listType,literalList):
-    print(op)
     i = curIndex
     numpacks = 0
     if listType == '1':
@@ -63,8 +62,6 @@ def operatorPacket(binData,curIndex,op,listType,literalList):
                 lenType = binData[i] 
                 i+=1
                 i,literalList = operatorPacket(binData,i,typePk,lenType,literalList)
-    print(op,literalList,numpacks)
-    print()
     if op == 0:
         sumval = sum(literalList[-numpacks:])
         otherElems = literalList[:-numpacks]
